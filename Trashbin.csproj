@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>symbols.nupkg</SymbolPackageFormat>
+    <Title>Trashbin</Title>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -25,50 +26,49 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.0-rc.2.23479.14" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Il2CppInterop.Runtime">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
+      <HintPath>C:\Users\KatDevsGames\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Il2CppMono.Data.Sqlite">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\Il2CppMono.Data.Sqlite.dll</HintPath>
+      <HintPath>C:\Users\KatDevsGames\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\Il2CppMono.Data.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
-    </Reference>
-    <Reference Include="Il2CppNewtonsoft.Json">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\Il2CppNewtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Il2CppPhotonUnityNetworking">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\Il2CppPhotonUnityNetworking.dll</HintPath>
+      <HintPath>C:\Users\KatDevsGames\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\Il2Cppmscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Il2CppSystem">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\Il2CppSystem.dll</HintPath>
+      <HintPath>C:\Users\KatDevsGames\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\Il2CppSystem.dll</HintPath>
     </Reference>
     <Reference Include="Il2CppSystem.Data">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\Il2CppSystem.Data.dll</HintPath>
+      <HintPath>C:\Users\KatDevsGames\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\Il2CppSystem.Data.dll</HintPath>
     </Reference>
     <Reference Include="MelonLoader">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\net6\MelonLoader.dll</HintPath>
+      <HintPath>C:\Users\KatDevsGames\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\MelonLoader.dll</HintPath>
     </Reference>
-    <Reference Include="System.Drawing.Common">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\net6\System.Drawing.Common.dll</HintPath>
+    <Reference Include="PhotonUnityNetworking">
+      <HintPath>..\..\..\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\PhotonUnityNetworking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnhollowerBaseLib">
+      <HintPath>..\..\..\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\UnhollowerBaseLib.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:\Users\KatDevsGames\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\UnityEngine.dll</HintPath>
+      <HintPath>C:\Users\KatDevsGames\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>C:\Users\KatDevsGames\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>C:\Users\KatDevsGames\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>H:\Program Files (x86)\Steam\steamapps\common\SynthRiders_Beta\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>C:\Users\KatDevsGames\Saved Games\Synth Riders\com.kluge.SynthRiders\files\melonloader\etc\managed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
 

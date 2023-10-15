@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using MelonLoader;
-using Il2Cpp;
 using Il2CppMono.Data.Sqlite;
-using Il2CppNewtonsoft.Json;
-using Il2CppSynth.SongSelection;
-using Il2CppTMPro;
 using System.Timers;
+using Newtonsoft.Json;
+using Synth.SongSelection;
+using TMPro;
 using Timer = System.Timers.Timer;
 
 namespace Trashbin.Actions
@@ -90,7 +89,7 @@ namespace Trashbin.Actions
                         SqliteDataReader reader = cmd.ExecuteReader();                        
                         if (reader.Read())
                         {
-                            imageFilePath = reader[0].ToString(); // column image_file
+                            imageFilePath = reader.GetString(0); // column image_file
                         }
 
                         reader.Close(); 

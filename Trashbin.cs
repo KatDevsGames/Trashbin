@@ -1,15 +1,15 @@
 ﻿using MelonLoader;
-using Il2Cpp;
-using Il2CppSynth.SongSelection;
 using System.Reflection;
-using System.Timers;
+using Synth.SongSelection;
 using UnityEngine;
-using UnityEngine.UI;
 using Timer = System.Timers.Timer;
 using Trashbin.Actions;
 using UnityEngine.Events;
 using Stream = System.IO.Stream;
 using Directory = System.IO.Directory;
+using System.Drawing.Imaging;
+using System.Drawing;
+using Il2CppSystem.Runtime.InteropServices;
 
 namespace Trashbin
 {
@@ -57,9 +57,28 @@ namespace Trashbin
             {
                 if (binStream != null)
                 {
-                    byte[] data = new byte[binStream.Length];
-                    binStream.Read(data, 0, (int)binStream.Length);
-                    iconTexture.LoadImage(data);
+                    Image pngImg = Image.FromStream(binStream);
+                    Bitmap pngBitmap = new(pngImg);
+                    iconTexture = new Texture2D(pngImg.Width, pngImg.Height);
+                    BitmapData bitmapData = pngBitmap.LockBits(new Rectangle(0, 0, pngBitmap.Width, pngBitmap.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+                    int stride = bitmapData.Stride;
+
+                    // Create a byte array to hold the pixel data
+                    byte[] pixelData = new byte[Math.Abs(stride) * pngBitmap.Height];
+                    Marshal.Copy(bitmapData.Scan0, pixelData, 0, pixelData.Length);
+
+                    // Iterate through the pixel data and set it to the Texture2D
+                    for (int y = 0; y < pngBitmap.Height; y++)
+                    {
+                        for (int x = 0; x < pngBitmap.Width; x++)
+                        {
+                            int index = y * stride + x * 4;
+                            Color32 color = new Color32(pixelData[index + 2], pixelData[index + 1], pixelData[index], pixelData[index + 3]);
+                            iconTexture.SetPixel(x, pngBitmap.Height - y - 1, color); // Flip the image vertically
+                        }
+                    }
+
+                    iconTexture.Apply();
                 }
                 else
                 {
@@ -72,7 +91,7 @@ namespace Trashbin
             iconSprite.name = "bt-X";
             Component[] components = deleteButton.GetComponents<Component>();
             Component[] allComponentsInChildren = deleteButton.GetComponentsInChildren<Component>(true);
-            deleteIcon.GetComponent<Image>().sprite = iconSprite;
+            deleteIcon.GetComponent<UnityEngine.UI.Image>().sprite = iconSprite;
             //deleteIcon.localScale = new Vector3(0.15f, 0.15f, 1);
 
 
